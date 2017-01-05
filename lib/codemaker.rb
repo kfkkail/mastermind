@@ -14,11 +14,12 @@ class CodeMaker
   
   def win_test(guess)
     @feedback = [:z, :z, :z, :z]
-    whitepin=@code
+    whitepin=@code.dup
     guess.map.with_index { |x, i| 
       if x == @code[i]
         @feedback.insert(0,:b)
         @feedback.pop
+        whitepin.delete_at(i)
       elsif whitepin.include?(guess[i])
         @feedback.insert(0,:w)
         @feedback.pop

@@ -75,5 +75,12 @@ describe CodeMaker do
         expect(codemaker1.win_test(guess)).to eql([:w, :w, :w, :w])
       end
     end
+    context "with 3 included" do
+      it "should return 3 :b" do
+        codemaker1.code = [1, 2, 3, 4]
+        guess =           [1, 2, 3, 1]
+        expect(codemaker1.win_test(guess)).to eql([:b, :b, :b, :z])
+      end
+    end
   end
 end
