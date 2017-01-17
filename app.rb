@@ -18,6 +18,7 @@ class MasterMind
     puts @codemaker.code.to_s #for testing
     remaining_guesses = 10 - @codebreaker.number_of_guesses
     if feedback == [:b, :b, :b, :b]
+      puts "You got it! I can't believe you did it."
       start_new_game
     elsif remaining_guesses == 0
       puts "No more guesses left. The code was #{@codemaker.code.to_s}."
